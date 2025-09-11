@@ -8,13 +8,11 @@ const CATEGORIES = [
 ];
 
 
-//Select DOM elements
 const btn = document.querySelector(".btn-open")
 const form = document.querySelector(".fact-form")
 const factsList = document.querySelector(".facts-list")
 
 factsList.innerHTML="";
-//Load data from supabase
 async function LoadFacts(){
     const res = await fetch('https://jyhuaifdulvsjqvonqdy.supabase.co/rest/v1/Facts',{
     headers:{
@@ -49,7 +47,6 @@ function CreateFactList(dataArray){
   factsList.insertAdjacentHTML("afterbegin", html);
 }
 
-//Toggle form
 btn.addEventListener('click',function() {
     if(form.classList.contains('hidden')){
         form.classList.remove('hidden')
